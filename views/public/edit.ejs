@@ -1,0 +1,121 @@
+<% layout('layouts/boilerplate') -%>
+
+<div class="container my-5">
+  <h2 class="text-center mb-4 fw-semibold text-primary">Edit Listing Details</h2>
+
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+
+      <!-- Card Wrapper -->
+      <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-4">
+
+          <form 
+            method="POST" 
+            action="/listings/<%= listing._id %>?_method=PUT"  
+            class="needs-validation" 
+            novalidate  
+            enctype="multipart/form-data"
+          >
+            <!-- Title -->
+            <div class="mb-3">
+              <label for="title" class="form-label fw-bold">Title</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                name="listing[title]"  
+                required 
+                value="<%= listing.title %>"
+                placeholder="Enter listing title"
+              />
+            </div>
+
+            <!-- Description -->
+            <div class="mb-3">
+              <label for="description" class="form-label fw-bold">Description</label>
+              <textarea 
+                class="form-control" 
+                name="listing[description]" 
+                rows="3"
+                placeholder="Enter a short description"
+              ><%= listing.description %></textarea>
+            </div>
+
+            <!-- Current Image -->
+            <div class="mb-4 text-center">
+              <label class="form-label fw-bold d-block mb-2">Original Image</label>
+              <div class="border rounded-3 p-3 bg-light">
+                <img 
+                  src="<%= listing.image.url %>" 
+                  alt="Listing Image" 
+                  class="img-fluid rounded shadow-sm" 
+                  style="max-width: 300px;"
+                />
+              </div>
+            </div>
+
+            <!-- Upload New Image -->
+            <div class="mb-3">
+              <label for="image" class="form-label fw-bold">Upload New Image</label>
+              <input 
+                type="file"  
+                class="form-control"  
+                name="listing[image]" 
+              />
+            </div>
+
+            <!-- Price and Location -->
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <label for="price" class="form-label fw-bold">Price</label>
+                <input 
+                  type="number" 
+                  class="form-control" 
+                  name="listing[price]" 
+                  required 
+                  value="<%= listing.price %>"
+                  placeholder="₹ Price"
+                />
+              </div>
+
+              <div class="col-md-8 mb-3">
+                <label for="location" class="form-label fw-bold">Location</label>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  name="listing[location]" 
+                  required 
+                  value="<%= listing.location %>"
+                  placeholder="Enter location"
+                />
+              </div>
+            </div>
+
+            <!-- Country -->
+            <div class="mb-3">
+              <label for="country" class="form-label fw-bold">Country</label>
+              <input 
+                type="text"  
+                class="form-control" 
+                name="listing[country]"  
+                value="<%= listing.country %>"
+                placeholder="Enter country"
+              />
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center mt-4">
+              <button type="submit" class="btn btn-primary px-5 py-2 fw-semibold rounded-pill shadow-sm">
+                <i class="bi bi-save me-2"></i> Save Changes
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+      <!-- End Card -->
+
+    </div>
+  </div>
+</div>

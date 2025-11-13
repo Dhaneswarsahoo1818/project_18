@@ -1,0 +1,135 @@
+ body{
+    font-family: "fantasy" !important;
+    display:flex;
+    flex-direction: column;
+    min-height : 100vh;
+ }
+
+.container{
+    flex:1;
+}
+#creat{
+    background-color: rgb(100, 39, 150);
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.navbar {
+    height: 3rem;
+    background-color: aliceblue;
+
+}
+.fa-yammer {
+    color: #0a66c2;
+    font-size: 2rem;
+}
+.nav-link {
+    font-size: 1.2rem;
+    color:rgb(182, 184, 89) !important;
+}
+.f-info-brand{
+    color: white;
+    font-size: 1rem;
+    width:100%;
+}
+.f-info-links a{
+    font-size: 1rem;
+    color: rgb(180, 61, 81);
+      text-decoration: none;
+}
+.f-info-links a :hover{
+    color: rgb(100, 39, 150);
+    text-decoration: none;
+
+}
+.f-info-links{
+    width:100%;
+    font-size: 2rem;
+}
+.f-info-links,.f-info-social,.f-info-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width:100%;
+}
+.f-info{
+    width:100%;
+}
+.f-info{
+    text-align: center;
+    height: 6rem;
+    background-color: rgb(34, 53, 70);
+    display: flex;
+    justify-content: center;
+    align-items: space-evenly;
+    flex-wrap: wrap;
+}
+.listing-card{
+    border: none !important;
+    margin-bottom: 3rem;
+}
+
+/* Review card styles - unique, friendly look */
+.review-card{
+    border-radius: 12px;
+    background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+    box-shadow: 0 6px 18px rgba(170, 179, 196, 0.08);
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(10,40,100,0.06);
+}
+.review-card .card-body{ 
+    padding: 0.75rem 1rem;
+}
+.review-card .card-title{
+    font-weight: 600;
+    color: black;
+}
+.review-card .card-text{
+    color: black;
+}
+
+/* Animated blue button for actions (delete) */
+.btn-animate-blue{
+    --btn-bg: #0b66ff;
+    background: linear-gradient(180deg,var(--btn-bg), #0959d6);
+    color:white;
+    border: none;
+    padding: 0.35rem 0.7rem;
+    border-radius: 6px;
+    transition: transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+    box-shadow: 0 6px 14px rgba(11,102,255,0.18);
+}
+.btn-animate-blue:hover{
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 22px rgba(11,102,255,0.22);
+}
+.btn-animate-blue:active{
+    transform: translateY(0) scale(0.99);
+}
+.btn-animate-blue:focus{
+    outline: 3px solid rgba(11,102,255,0.18);
+    outline-offset: 2px;
+}
+
+.card-img-top{
+    border-radius: 2rem !important;
+    width: 100% !important;
+}
+.card.body{
+    padding:3px !important;
+}
+.card-text p{
+   font-weight: 500;
+   
+}
+
+
+   
+ 
+
