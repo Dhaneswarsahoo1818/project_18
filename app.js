@@ -45,7 +45,7 @@ main()
 // Mongo Store
 const store = MongoStore.create({
   mongoUrl: mongo_database,
-  crypto: { secret: "mysecret" },
+  crypto: { secret: process.env.SECRET },
   touchAfter: 24 * 3600,
 });
 
@@ -56,7 +56,7 @@ store.on("error", (err) => {
 // Session Configuration
 const sessionOptions = {
   store,
-  secret: "mysecret",
+  secret:  process.env.SECRET ,
   resave: false,
   saveUninitialized: true,
   cookie: {
@@ -93,7 +93,7 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
-// 404 Handler (fixed for Express 5)
+// 404 Handler (non exist path)
 app.all(/"*"/, (req, res, next) => {
   next(new ExpressError("Page Not Found", 404));
 });
