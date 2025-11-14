@@ -39,8 +39,8 @@ async function main() {
   await mongoose.connect(mongo_database);
 }
 main()
-  .then(() => console.log("✅ Connected to MongoDB"))
-  .catch((err) => console.log("❌ Database connection error:", err));
+  .then(() => console.log(" Connected to MongoDB"))
+  .catch((err) => console.log(" Database connection error:", err));
 
 // Mongo Store
 const store = MongoStore.create({
@@ -50,7 +50,7 @@ const store = MongoStore.create({
 });
 
 store.on("error", (err) => {
-  console.log("❌ Error in Mongo session store:", err);
+  console.log("Error in Mongo session store:", err);
 });
 
 // Session Configuration
@@ -75,7 +75,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-// ✅ Flash + Current User Middleware (MUST come before routes)
+//  Flash + Current User Middleware (MUST come before routes)
 app.use((req, res, next) => {
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
@@ -106,5 +106,5 @@ app.use((err, req, res, next) => {
 
 // Server
 app.listen(8080, () => {
-  console.log("🚀 Server running at http://localhost:8080");
+  console.log(" Server running at http://localhost:8080");
 });
